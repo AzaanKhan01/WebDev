@@ -1,0 +1,9 @@
+use ("dealarships");
+db.dealerships.insertOne({
+    name: "AutoWorld",
+    location: "123 Main St, Anytown, USA",
+    established: 1995,
+    cars: [ "Toyota", "Honda", "Ford" ],
+    employees: 25,
+    isOpen: true
+});

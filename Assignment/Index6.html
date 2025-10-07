@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><style>
+    table{
+        background-color: rgb(115, 218, 218);
+        
+        outline: 1px solid black;
+        border-radius: 10px;
+        border-spacing: 9px;
+    
+    }
+    th,td{
+        outline: 1px solid black;
+        border-radius: 10px ;
+
+    }
+    .container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 30px;
+            justify-content: left;
+            margin-top: 50px;
+            margin-left: 60px;
+        }
+        .shape {
+            width: 100px;
+            height: 60px;
+            border: 2px solid green;
+        }
+        .rounded { border-radius: 15px; }
+        .fully-rounded { border-radius: 30px; }
+        .oval { 
+            width: 100px; 
+            height: 60px; 
+            border-radius: 50%; 
+        }
+        .semi-rounded { border-radius: 0 20px 20px 0; }
+</style>
+    <table style="width: 500px; text-align: center">
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>90</td>
+    </tr>
+</table>
+
+    <div class="container">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape rounded"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape rounded"></div>
+        <div class="shape oval"></div>
+        <div class="shape"></div>
+        <div class="shape semi-rounded"></div>
+    </div>
+    
+
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #cc0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    
+}
+
+.sidebar {
+    width: 180px;
+    padding: 20px;
+    margin-left: 50px;
+
+    
+}
+
+.nav-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: blue;
+    border: 1px solid black;
+    width: 120px;}
+
+
+.nav-item:first-child {
+    color: purple;
+}
+
+.nav-item::after {
+    content: " ";
+    width: 20px;
+    height: 40px;
+    background-color: black;
+    display:inline-block;
+    
+    
+    
+}
+
+.content {
+    padding-left: 200px;
+    max-width: 600px;
+}
+
+h1 {
+    color: purple;
+}
+
+    </style>
+   <div class="container">
+    <div class="sidebar">
+        <a href="#" class="nav-item">Home page</a>
+        <a href="#" class="nav-item">Musings</a>
+        <a href="#" class="nav-item">My town</a>
+        <a href="#" class="nav-item">Links</a>
+    </div>
+    <div class="content">
+        <h1>My first styled page</h1>
+        <p>Welcome to my styled page!</p>
+        <p>It lacks images, but at least it has style. And it has links, even if they don't go anywhere...</p>
+        <p>There should be more here, but I don’t know what yet.</p>
+        <hr>
+        <p><em>Made 20 Feb 2025 <br>by Ahmed Azaan Khan.</em></p>
+    </div>
+</div>
+   
+</body>
+</html>

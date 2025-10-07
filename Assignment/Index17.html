@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Column Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 20px;
+        }
+        .validation-message {
+            color: #dc3545;
+            font-size: 0.875em;
+            display: none;
+            text-align: right;
+            padding: 5px 0;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .alert-icon {
+            position: absolute;
+            right: 10px;
+            top: 38px;
+            color: #dc3545;
+            display: none;
+        }
+        .required-asterisk {
+            color: #dc3545;
+            margin-left: 3px;
+        }
+        .form-control {
+            height: 45px;
+            width: 100%;
+        }
+        textarea.form-control {
+            height: auto;
+        }
+        .form-select {
+            height: 45px;
+        }
+        .form-label{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <form class="form-container needs-validation" novalidate>
+        <div class="row">
+            <div class="col-12">
+                <div class="input-group">
+                    <label class="form-label">First Name<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your first name</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Last Name<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your last name</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">E-Mail<span class="required-asterisk">*</span></label>
+                    <input type="email" class="form-control" placeholder="E-Mail Address" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your email address</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Phone #<span class="required-asterisk">*</span></label>
+                    <input type="tel" class="form-control" placeholder="(845)555-1212" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your phone number</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Address<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control" placeholder="Address" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your street address</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">City<span class="required-asterisk">*</span></label>
+                    <input type="text" class="form-control" placeholder="City" required>
+                    <i class="fas fa-exclamation-circle alert-icon"></i>
+                    <div class="validation-message">Please supply your city</div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">State</label>
+                    <select class="form-select form-control">
+                        <option selected>Please select your state</option>
+                        <option>State 1</option>
+                        <option>State 2</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Do you have hosting?</label>
+                    <div class="d-flex gap-3">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="hosting" id="yes">
+                            <label class="form-check-label" for="yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="hosting" id="no">
+                            <label class="form-check-label" for="no">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Project Description</label>
+                    <textarea class="form-control" rows="4" style="height: 120px"></textarea>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const requiredFields = form.querySelectorAll('[required]');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+            const parent = field.closest('.input-group');
+            const alertIcon = parent.querySelector('.alert-icon');
+            const validationMessage = parent.querySelector('.validation-message');
+
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('is-invalid');
+                alertIcon.style.display = 'block';
+                validationMessage.style.display = 'block';
+            } else {
+                field.classList.remove('is-invalid');
+                alertIcon.style.display = 'none';
+                validationMessage.style.display = 'none';
+            }
+        });
+
+        if (isValid) {
+            form.submit();
+        }
+    });
+});
+</script>
+</body>
+</html>

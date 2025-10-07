@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .running-image {
+            width: 100px; /* Adjust size as needed */
+            position: absolute;
+            bottom: 20px;
+            animation: run 5s linear infinite;
+        }
+
+        @keyframes run {
+            from {
+                left: -100px;
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        .image-name {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Running Image Example</h1>
+
+    <div class="container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s" alt="Running Image" class="running-image">
+    </div>
+
+    <div class="image-name">Sunset clouds</div>
+
+</body>
+</html>
