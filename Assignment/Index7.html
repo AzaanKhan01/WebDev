@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Navbar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2px;
+            
+            display: flex;
+            
+        }
+        .navbar {
+            width: 200px;
+            height: 215px;
+            border-left:  1px solid black;
+            border-right:  1px solid black ;
+            border-top:1px solid black ;
+            border-bottom: 1px solid black;
+            padding: 9px;
+        }
+        .navbar .home {
+            background-color: orange;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        .navbar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: blue;
+            background-color: lightblue;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="home">Home</div>
+        <a href="#java">Java</a>
+        <a href="#css">CSS</a>
+        <a href="#html">HTML</a>
+        <a href="#bootstrap">Bootstrap</a>
+    </div>
+</body>
+</html>
+
