@@ -1,1 +1,0 @@
-sample_ole_file.doc
